@@ -15,20 +15,42 @@ neste momento, preciso que me ajude a abstrair as entidades e relacionamentos pa
 Ativar a escuta para os commits husky
 husky:prepare
 
-### S - Single Responsibility Principle (Princípio da responsabilidade única)
+# SOLID
+
+## S - Single Responsibility Principle (Princípio da responsabilidade única)
 
 - Uma classe ou objeto deve ter apenas uma responsabilidade. Isso significa que ele deve ser responsável por apenas um aspecto do comportamento do sistema.
 
 - Por exemplo, uma classe User não deve ser responsável por autenticar usuários, gerar relatórios e armazenar dados de usuário. Em vez disso, essas responsabilidades devem ser delegadas a classes ou objetos separados.
 
-### L - Liskov Substitution Principle (Princípio da substituição de Liskov)
+## L - Liskov Substitution Principle (Princípio da substituição de Liskov)
 
 - Classes derivadas devem ser substituíveis por suas classes base. Isso significa que qualquer lugar onde uma classe base possa ser usada, sua classe derivada também deve ser capaz de ser usada.
 
 - Por exemplo, uma classe Animal pode ter uma subclasse Dog. Uma função que aceita um objeto Animal deve ser capaz de aceitar um objeto Dog sem causar erros.
 
-### D - Dependency Inversion Principle (Princípio da inversão de dependências)
+## D - Dependency Inversion Principle (Princípio da inversão de dependências)
 
 - Dependências devem ser invertidas. Isso significa que classes ou objetos devem depender de abstrações, e não de implementações concretas.
 
 - Por exemplo, uma classe Circle deve depender de uma interface Shape. Isso permite que a classe Circle seja usada com qualquer implementação da interface Shape, seja ela Circle, Rectangle ou qualquer outra.
+
+## API Gateway
+
+- O API Gateway é um serviço que permite criar APIs RESTful. APIs RESTful são um tipo de interface que permite que diferentes sistemas se comuniquem uns com os outros.
+
+- Imagine que você quer criar um jogo que permita que os jogadores se comuniquem uns com os outros. Você pode usar o API Gateway para criar uma API RESTful que permita que os jogadores enviem e recebam mensagens.
+
+# Quando usar um bando de dados relacional ou não relacional
+
+## Você deve usar um bando de dados relacional se:
+
+- Seus dados têm uma estrutura definida.
+- Você precisa realizar consultas complexas em seus dados.
+- Você precisa manter a integridade referencial de seus dados.
+
+## Você deve usar um bando de dados não relacional se:
+
+- Seus dados não têm uma estrutura definida.
+- Você precisa realizar consultas rápidas em seus dados.
+- Você não precisa manter a integridade referencial de seus dados.
