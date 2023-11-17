@@ -1,4 +1,4 @@
-import { PostgresVtrRepository } from "../repositories/implementations/PostgresVtrRepository"
+import { PostgresVtrRepository } from "../../repositories/implementations/PostgresVtrRepository"
 import { CreateVtrUseCase } from "./CreateVtrUseCase"
 import { CreateVtrController } from "./CreateVtrController"
 

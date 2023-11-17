@@ -1,6 +1,6 @@
-import { IVtrRepository } from "../repositories/IVtrlRepository"
+import { IVtrRepository } from "../../repositories/IVtrlRepository"
 import { ICreateVtrRequestDTO } from "./CreateVtrDTO"
-import { Viatura } from "../entities/Viatura"
+import { Viatura } from "../../entities/Viatura"
 
 export class CreateVtrUseCase {
   constructor(private vtrRepository: IVtrRepository) {}

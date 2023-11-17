@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { createVtrController } from "./useCases"
+import { createVtrController } from "./useCases/CasesViaturas"
 
 const router = Router()
 
