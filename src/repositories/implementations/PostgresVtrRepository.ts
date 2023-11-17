@@ -9,7 +9,7 @@ export class PostgresVtrRepository implements IVtrRepository {
     this.prisma = new PrismaClient()
   }
 
-  async findByEmail(placa: string): Promise<Viatura> {
+  async findByPlaca(placa: string): Promise<Viatura> {
     const viatura = await this.prisma.viatura.findFirst({
       where: {
         placa: placa,
