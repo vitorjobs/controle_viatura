@@ -1,15 +1,17 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = "postgresql://meu_usuario:minha_senha@app-postgres:5432/bd_ctrl_vtr"
+//   // url      = env("DATABASE_URL")
+// }
 
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
-
 
 model Viatura {
   id String @id @default(cuid())

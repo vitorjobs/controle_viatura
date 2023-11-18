@@ -6,13 +6,17 @@
   "scripts": {
     "start": "node dist/index.js",
     "start:open": "nodemon --transpile-only --respawn --ignore-watch node_modules src/server.ts",
-    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts prisma:studio",
     "husky:prepare": "husky install",
     "test": "jest --passWithNoTests",
     "test:watch": "npm run test --watch",
     "test:staged": "npm run test --findRelatedTests",
     "test:push": "npm run test --coverage",
-    "build": "tsc"
+    "build": "tsc",
+    "prisma:studio": "npx prisma studio",
+    "prisma:migrate": "npx prisma migrate dev",
+    "start:docker": "concurrently \"npm run start:dev\" \"npm run prisma:studio\"",
+    "start:teste": "concurrently  \"npm run prisma:migrate\" \"npm run start:dev\" \"npm run prisma:studio\""
   },
   "keywords": [],
   "author": "",
@@ -24,6 +28,7 @@
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "add": "^2.0.6",
+    "concurrently": "^8.2.2",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
@@ -41,6 +46,7 @@
     "@types/uuidv4": "^5.0.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "uuidv4": "^6.2.13"
+    "uuidv4": "^6.2.13",
+    "pg": "8.10.0"
   }
 }
