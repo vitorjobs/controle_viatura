@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  app-postgres:
+    image: postgres
+    container_name: app-postgres
+    environment:
+      POSTGRES_USER: meu_usuario
+      POSTGRES_PASSWORD: minha_senha
+    ports:
+      - "5432:5432"
+    volumes:
+      - .docker/dbdata:/var/lib/postgresql/data
+
+  app-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app-node
+    ports:
+      - "3000:3000"
+      - "5555:5555"
+    volumes:
+      - .:/home/node/app
+    # depends_on:
+    #   - app-postgres
+    # environment:
+    #   DATABASE_URL: app-postgres://meu_usuario:minha_senha@app-postgres:5432/bd_ctrl_vtr
